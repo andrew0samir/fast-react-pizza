@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux'
-import { formatCurrency } from '../../utils/helpers'
-import DeleteItem from './DeleteItem'
-import UpdateItemQuantity from './UpdateItemQuantity'
-import { getCurrentQuantityById } from '../cart/cartSlice'
+import { useSelector } from 'react-redux';
+import { formatCurrency } from '../../utils/helpers';
+import DeleteItem from './DeleteItem';
+import UpdateItemQuantity from './UpdateItemQuantity';
+import { getCurrentQuantityById } from '../cart/cartSlice';
 
 function CartItem({ item }) {
-    const { pizzaId, name, quantity, totalPrice } = item
-    const currentQuantity = useSelector(getCurrentQuantityById(pizzaId))
+    const { pizzaId, name, quantity, totalPrice } = item;
+    const currentQuantity = useSelector(getCurrentQuantityById(pizzaId));
 
     return (
         <li className="py-3 sm:flex sm:items-center sm:justify-between">
@@ -24,7 +24,7 @@ function CartItem({ item }) {
                 <DeleteItem pizzaId={pizzaId} />
             </div>
         </li>
-    )
+    );
 }
 
-export default CartItem
+export default CartItem;
