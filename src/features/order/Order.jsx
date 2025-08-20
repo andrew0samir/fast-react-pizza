@@ -9,6 +9,7 @@ import {
     formatDate,
 } from '../../utils/helpers';
 import { useEffect } from 'react';
+import UpdateOrder from './UpdateOrder';
 
 function Order() {
     const order = useLoaderData();
@@ -37,7 +38,7 @@ function Order() {
 
     return (
         <div className="space-y-8 px-4 py-6">
-            <div className="felx flex-wrap items-center justify-between gap-2">
+            <div className="flex flex-wrap items-center justify-between gap-2">
                 <h2 className="text-xl font-semibold">Order #{id} status</h2>
 
                 <div className="space-x-2">
@@ -91,6 +92,7 @@ function Order() {
                     {formatCurrency(orderPrice + priorityPrice)}
                 </p>
             </div>
+            {!priority && <UpdateOrder order={order} />}
         </div>
     );
 }
